@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lost & Found Pets Resource</title>
+    <link rel="stylesheet" href="https://pyscript.net/snapshots/2024.9.2/core.css">
+    <script type="module" src="https://pyscript.net/snapshots/2024.9.2/core.js"></script>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/lost.css">
+</head>
+<body class="allbox">
+    <header>
+        <div class="logo-container">
+            <img src="image/logo.jpg" alt="Logo">
+            <div class="site-name">All Existing resources to reunite Lost & Found Pets</div>
+        </div>
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="Lost.html">Lost</a>
+            <a href="Found.html">Found</a>
+        </nav>
+    </header>
+    
+    <div class="boxs">
+        <h3>🐾 Help you find your 
+            <span class="emphasis-text">LOST</span> pets 🐾
+        </h3>
+
+        <div class="boxin">
+       It’s okay. Take a deep breath.
+       We know how scary it feels when
+       your pet goes missing. You’re 
+       not alone—many people have been 
+       in the same place, and help is here. 
+       This page will gently guide you 
+       through the steps you can take 
+       right now to bring your pet home. 
+       You don’t need to do everything 
+       at once. Just start with the 
+       first step—we’re here with you.</div>
+
+       
+    <div class="boxin">
+        <h2>Table of Contents</h2>
+<p>1. Make a Lost Pet Poster</p>
+<p>2. Where You Can Post the Poster</p>
+<p>3. Estimate Your Pet’s Possible Travel Distance</p>
+<p>4. Where to Physically Ask for Help</p>
+<p>5. Tips for Attracting Public Attention</p>
+<p>6. Safety advice for searching</p>
+
+
+
+    </div>
+
+<div class="estimator_box">
+  <h2>Lost Pet Poster Generator</h2>
+
+  <p>Pet's Name:  <input type="text" id="petName">
+  </p>
+
+  <p>Type of Pet:
+  <input type="text" id="petType"></p>
+
+  <p>Last Seen Location:
+  <input type="text" id="lastSeen"></p>
+
+  <p>Contact Info:
+  <input type="text" id="contact"></p>
+
+  <p>Reward (if any):
+  <input type="text" id="reward"></p>
+
+  <button onclick="generatePoster()">Make My Poster</button>
+
+  <hr>
+
+  <h2>Your Poster:</h2>
+  <div id="posterOutput"></div>
+
+  <script>
+    function generatePoster() {
+      const name = document.getElementById("petName").value;
+      const type = document.getElementById("petType").value;
+      const location = document.getElementById("lastSeen").value;
+      const contact = document.getElementById("contact").value;
+      const reward = document.getElementById("reward").value;
+
+      const output = `
+        <h2>🐾 LOST ${type.toUpperCase()} 🐾</h2>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Last Seen:</b> ${location}</p>
+        <p><b>Contact:</b> ${contact}</p>
+        <p><b>Reward:</b> ${reward ? reward : "No reward specified"}</p>
+        <p>If you have any information, please help us bring ${name} home!</p>
+      `;
+
+      document.getElementById("posterOutput").innerHTML = output;
+    }
+  </script></div>
+
+        <div class="boxin">
+      <h2>Where can you post this poster</h2>
+      <div class="side-by-side">
+            <!-- Left box -->
+            <div class="left-box">
+                <!-- Content for the left box -->
+               <p>In Your Local Area</p>
+               <p>Power poles or trees near your home (only where allowed)</p>
+               <p>Notice boards at supermarkets (e.g. Countdown, New World, Pak’nSave)</p>
+            </div>
+            <!-- Right box -->
+            <div class="right-box">
+                <!-- Content for the right box -->
+                <p>Pet stores (like Animates or Petstock)</p>         
+                <p>Vet clinics (ask if you can post at reception or outside)</p>
+                <p>Community centres, libraries, or schools (use public notice boards)</p>
+             </div>
+        </div>
+        <div class="side-by-side">
+            <!-- Left box -->
+            <div class="left-box">
+                <!-- Content for the left box -->
+                <p>Facebook groups</p>         
+                <p>Neighbourly.co.nz – New Zealand community website</p>
+                <p>Petsonthenet.co.nz – official lost pet website</p>
+            </div>
+            <!-- Right box -->
+            <div class="right-box">
+                <!-- Content for the right box -->
+                <p>SPCA website – report a lost pet</p>
+                <p>Trade Me Pets – Lost and Found section</p>
+            </div>
+        </div>
+    </div>
+    
+    <body class="estimator_body">
+    <div class="estimator_box">
+      <h2>Lost Pet Distance Estimator</h2>
+      <label>How many hours ago did your pet go missing?</label>
+      <input type="number" id="hours" min="0" step="0.1" placeholder="e.g. 3.5" />
+
+      <label>What animal is your pet?</label>
+      <input type="text" id="animal" placeholder="e.g. rabbit" />
+
+      <button py-click="estimate_distance">Estimate</button>
+
+      <p id="result" class="result-text"></p>
+    </div>
+
+    <py-script>
+      from js import document
+      import re
+      
+      animal_speeds = {
+          "rabbit": 48, "ferret": 24, "chinchilla": 24, "guinea pig": 11,
+          "gerbil": 13, "dog": 72, "cat": 48, "hamster": 8,
+          "parrot": 80, "budgerigar": 56, "goldfish": 5, "turtle": 0.5,
+          "tortoise": 0.5, "horse": 88, "goat": 17, "pig": 17,
+          "sheep": 40, "chicken": 14, "duck": 24, "rat": 13
+      }
+      
+      def estimate_distance(*args, **kwargs):
+          result_el = document.getElementById("result")
+          try:
+              hours = float(document.getElementById("hours").value)
+              if hours < 0:
+                  result_el.innerText = "❌ Please enter a positive number of hours."
+                  return
+          except:
+              result_el.innerText = "❌ Please enter a valid number for hours."
+              return
+      
+          animal = document.getElementById("animal").value.strip().lower()
+      
+          if not re.match("^[a-z ]+$", animal):
+              result_el.innerText = "❌ Invalid animal name. Use letters only."
+              return
+      
+          if animal in animal_speeds:
+              distance = animal_speeds[animal] * hours
+              result_el.innerText = f"✅ Your pet might be up to {round(distance, 1)} km away."
+          else:
+              result_el.innerText = "❌ Sorry, we don't have data for that animal."
+      
+    </py-script>
+<div class="boxin">
+      <h2>Physically ask for help!!!</h2>
+      <h2>SPCA</h2>
+      <div class="side-by-side">
+            <!-- Left box -->
+            <div class="left-box">
+                <!-- Content for the left box -->
+                <p>Name: Royal New Zealand Society for the Prevention of Cruelty to Animals Incorporated</p>
+                <p>Address: 6 Rawiri Place, Hobsonville, Auckland 0618, New Zealand </p>
+                <p>Email: board.secretary@spca.nz</p>
+                <p>Phone number: 09 825 1802</p>
+            </div>
+            <!-- Right box -->
+            <div class="right-box">
+                <!-- Content for the right box -->
+                <p>Name: SPCA Auckland – Mangere Centre</p>
+                <p>Address: on a 10‑acre site near Auckland Airport, south of the city </p>
+                <p>Email: education@spca.nz</p>
+                <p>Phone number: 09 256 7300</p>
+            </div>
+        </div>
+           <h2>Auckland council</h2>
+      <div class="side-by-side">
+            <!-- Left box -->
+            <div class="left-box">
+                <!-- Content for the left box -->
+                <p>Name: Auckland Council</p>
+                <p>Address: Call Centre, Auckland City, New Zealand </p>
+                <p>Email: board.secretary@spca.nz</p>
+                <p>Phone number: 09 301 0101 </p>
+            </div>
+            <!-- Right box -->
+            <div class="right-box">
+                <!-- Content for the right box -->
+                <p>Name: Dunedin City Council</p>
+                <p>Address: Ground Floor, Civic Centre, 50 The Octagon, Dunedin, New Zealand </p>
+                <p>Email: dcc@dcc.govt.nz</p>
+                <p>Phone number: +64 3 477 4000</p>
+            </div>
+        </div>
+        <div class="side-by-side">
+            <!-- Left box -->
+            <div class="left-box">
+                <!-- Content for the left box -->
+                <p>Name: Grey District Council</p>
+                <p>Address: 105 Tainui Street, Greymouth 7805, New Zealand </p>
+                <p>Email: info@greydc.govt.nz</p>
+                <p>Phone number: 03 769 8600</p>
+            </div>
+            <!-- Right box -->
+            <div class="right-box">
+                <!-- Content for the right box -->
+                <p>Name: Ruapehu District Council</p>
+                <p>Address: on a 10‑acre site near Auckland Airport, south of the city </p>
+                <p>Email: board.secretary@spca.nz</p>
+                <p>Phone number: 07 895 8188</p>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="boxin">
+      <h2>Tips for Attracting Public Attention</h2>
+
+<p><b>1.</b> Print your poster and put it in a letter that says <b>Safe Me</b> in bold, then place it in all your neighbours' mailboxes.</p>
+<p><b>2.</b> Go knock on neighbours' doors to ask if they have seen your pet.</p>
+<p><b>3.</b> Post your pet’s poster and message on every media platform you can find.</p>
+<p><b>4.</b> Put multiple clear pictures of your pet on the poster.</p>
+<p><b>5.</b> Offer a monetary reward if possible.</p>
+<p><b>6.</b> Make sure formal organisations (like shelters and councils) are aware of your situation.</p>
+<p><b>7.</b> Put your poster at busy places like bus stop, supermarket doors, schools, parks.</p>
+
+    </div>
+    <div class="boxin">
+      <h2>Safety Advice</h2>
+
+<p><b>1. Don’t go alone.</b>Bring a friend or family member.</p>
+<p><b>2. Stay in public areas. </b>Tell someone where you’re going and keep your phone charged.</p>
+<p><b>3.Be careful in hidden or risky places (bushes, forests, holes, under houses). </b> Make sure you can get out, and have someone outside watching or waiting for you.</p>
+
+    </div>
+    </div>
+    
+<footer>
+  <!-- Column 1: Site infomation -->
+  <div class="footer-column">
+    <strong>Reunite Pets</strong><br>
+    Helping lost pets find their way home.<br><br>
+    &copy; 2025 Eva Liu 22085
+  </div>
+
+  <!-- Column 2: Links -->
+  <div class="footer-column">
+    <strong>Navigation</strong><br>
+    <a href="homepage.html">Home</a><br>
+    <a href="Lost.html">Lost a Pet</a><br>
+    <a href="Found.html">Found a Pet</a><br>
+  </div>
+
+  <!-- Column 3: Contact -->
+  
+  <p class="footer-small-text">
+  External resources that made or are provided in this website include trusted sources including TradeMe, Animal Register, and Auckland Council. All trademarks and copyrights belong to their respective owners.
+</p>
+<div class="footer-column">
+<p class="footer-small-text">
+  Source: <a href="https://www.facebook.com/groups/334239582723228/" target="_blank">Facebook</a>
+</p>
+<p class="footer-small-text">
+  Source: <a href="https://www.facebook.com/groups/334239582723228/" target="_blank">TradeMe</a>
+</p>
+<p class="footer-small-text">
+  Source: <a href="https://www.facebook.com/groups/334239582723228/" target="_blank">Auckland council website</a>
+</p>
+<p class="footer-small-text">
+  Source: <a href="https://www.facebook.com/groups/334239582723228/" target="_blank">Instrgram</a>
+</p>
+<p class="footer-small-text">
+  Source: <a href="https://www.facebook.com/groups/334239582723228/" target="_blank">chatGPT</a>
+</p>
+<p class="footer-small-text">
+  Source: <a href="https://www.facebook.com/groups/334239582723228/" target="_blank">Google</a>
+</p>
+<p class="footer-small-text">
+  Source: <a href="https://www.facebook.com/groups/334239582723228/" target="_blank">w3school</a>
+</p>
+<p class="footer-small-text">
+  Source: <a href="https://www.facebook.com/groups/334239582723228/" target="_blank">Lost pet listing</a>
+</p>
+</div>
+<p class="footer-small-text">
+  Information/data in this website was last up dated on (9:49 29th/July/2025), new information is not expected to be presented
+</p>
+</footer>
+
+  </body>
+</html>
