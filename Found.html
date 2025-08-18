@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/found.css">
 </head>
-<body class="allbox">
-    <header>
+<header>
         <div class="logo-container">
             <img src="image/logo.jpg" alt="Logo">
             <div class="site-name">All Existing resources to reunite Lost & Found Pets</div>
@@ -21,6 +20,8 @@
             <a href="Found.html">Found</a>
         </nav>
     </header>
+<body >
+    
     
     <div class="boxs">
         <h3>🐾 Help reunite 
@@ -50,7 +51,7 @@
         
 <div class="boxin">
         
-      <h2>If you want to reunite the pet by yourself, here are websites for posting lost pet:(these are not all but where most pet losted persons look/post on)
+      <h2>If you want to reunite the pet by yourself, here are websites for posting found pets:(these are not all but where most pet losted persons look/post on)
 Sit 1:
 name
 What it looks like
@@ -98,7 +99,7 @@ sit3..
 
 </div>
 <div class="estimator_box">
-  <h2>Lost Pet Poster Generator</h2>
+  <h2>Found Pet Poster Generator</h2>
 
   <p>Pet's Name:  <input type="text" id="petName">
   </p>
@@ -131,7 +132,7 @@ sit3..
       const reward = document.getElementById("reward").value;
 
       const output = `
-        <h2>🐾 LOST ${type.toUpperCase()} 🐾</h2>
+        <h2>🐾 FOUND ${type.toUpperCase()} 🐾</h2>
         <p><b>Name:</b> ${name}</p>
         <p><b>Last Seen:</b> ${location}</p>
         <p><b>Contact:</b> ${contact}</p>
@@ -225,7 +226,10 @@ description:/(no kill shelter or kill after 7 days? what people say about them) 
     </div>
     </div>
     
-<footer>
+
+
+  </body>
+  <footer>
   <!-- Column 1: Site infomation -->
   <div class="footer-column">
     <strong>Reunite Pets</strong><br>
@@ -276,6 +280,4 @@ description:/(no kill shelter or kill after 7 days? what people say about them) 
   Information/data in this website was last up dated on (9:49 29th/July/2025), new information is not expected to be presented
 </p>
 </footer>
-
-  </body>
 </html>
