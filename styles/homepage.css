@@ -1,5 +1,15 @@
 /* Homepage specific styles */
-
+.boxi {
+  background: transparent;
+  border: transparent;
+  border-radius: 12px;
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+  width: 85%;
+  box-shadow: transparent;
+  margin-top: 20px;
+}
 .estimator_body {
   font-family: sans-serif;
   background-color: #f8f8f8;
@@ -87,20 +97,21 @@ input {
   margin-top: 20px;
 }
 
-.boxt {
-    background: white;
-    border: 2px solid #ccc;
-    border-radius: 12px;
-    text-align: center;
-    align-items: center;
-    padding: 20px;
-    width: 25%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-top: 20px;
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-}
+
+
+.boxt { 
+  background: black; 
+  border: 2px solid; 
+  border-radius: 12px; 
+  text-align: center; 
+  align-items: center; 
+  padding: 20px; 
+  width: 20%; 
+  margin-top: 20px; 
+  text-decoration: none; 
+  color: white; 
+  display: inline-block; }
+
 
 h2, p {
     text-align: center;
