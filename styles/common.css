@@ -1,6 +1,16 @@
-/* Common styles shared across all pages */
+/* 
 
-/* Basic reset and styling */
+COMMON STYLES - Lost & Found Pets Resource
+
+Shared styles used across all pages of the website
+Author: Eva Liu
+Last Updated: July 29, 2025
+
+*/
+
+/* 
+   Global Reset and Basic Layout
+    */
 html {
   background-color: #000000;
   margin: 0;
@@ -18,13 +28,15 @@ body {
   min-height: 100vh;
 }
 
-/* Special styling for allbox body */
+/* Special body styling for allbox layout */
 body.allbox {
   background-color: transparent;
   padding: 0;
 }
 
-/* Header styles */
+/* 
+   Header Section & Navigation
+    */
 header {
   display: flex;
   justify-content: space-between;
@@ -35,6 +47,7 @@ header {
   width: 100%;
 }
 
+/* Logo container and branding */
 .logo-container {
   display: flex;
   align-items: center;
@@ -51,6 +64,7 @@ header {
   color: #333;
 }
 
+/* Main navigation links */
 nav a {
   margin-left: 20px;
   text-decoration: none;
@@ -62,7 +76,9 @@ nav a:hover {
   color: #000;
 }
 
-/* Common box styles */
+/* 
+   Common Container Box Styles
+    */
 .box {
   display: inline-block;
   background: white;
@@ -101,11 +117,16 @@ nav a:hover {
   margin-top: 20px;
 }
 
+/* 
+   Typography Alignment
+    */
 h2, p {
   text-align: center;
 }
 
-/* Footer styles */
+/* 
+   Footer Section & Attribution
+    */
 footer {
   background-color: #f9f9f9;
   padding: 30px;
@@ -127,19 +148,22 @@ footer {
   color: #888;
 }
 
-/* Emphasis text styles */
+/* 
+   Text Emphasis & Styling
+    */
 .emphasis-text {
   font-size: 2em;
   font-weight: bold;
 }
 
-/* Common text styling */
 .result-text {
   margin-top: 20px;
   font-weight: bold;
 }
 
-/* Image overlay styles */
+/* 
+   Image Display & Overlay System
+    */
 .image-container {
   position: relative;
   display: inline-block;

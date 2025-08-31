@@ -1,5 +1,8 @@
 /* Found page specific styles */
 
+/* 
+   Found Pet Poster Generator Styles
+    */
 .estimator_body {
   font-family: sans-serif;
   background-color: #f8f8f8;
@@ -19,6 +22,9 @@
   margin-top: 20px;
 }
 
+/* 
+   Form Elements (Buttons & Inputs)
+    */
 button {
   margin-top: 15px;
   padding: 8px 16px;
@@ -42,6 +48,9 @@ input {
   border: 1px solid #ccc;
 }
 
+/* 
+   Main Container Layouts
+    */
 .allbox{
   display: flex;
   flex-direction: column;
@@ -70,6 +79,9 @@ input {
   margin-top: 20px;
 }
 
+/* 
+   Side-by-Side Layout System
+    */
 .side-by-side {
   display: flex;
   justify-content: space-between;
@@ -85,4 +97,32 @@ input {
   width: 48%;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   margin-top: 20px;
+}
+
+/* 
+   Image Container & Hover Effects
+    */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
 }

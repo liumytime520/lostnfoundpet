@@ -1,5 +1,13 @@
-/* Lost page specific styles */
+/* 
+LOST PAGE STYLES - Lost & Found Pets Resource
+Custom styles for the lost pets resource page
+Author: Eva Liu  
+Last Updated: July 29, 2025
+*/
 
+/* 
+   Lost Pet Poster Generator Styles
+    */
 .estimator_body {
   font-family: sans-serif;
   background-color: #f8f8f8;
@@ -19,6 +27,9 @@
   margin-top: 20px;
 }
 
+/* 
+   Interactive Form Elements
+    */
 button {
   margin-top: 15px;
   padding: 8px 16px;
@@ -42,6 +53,9 @@ input {
   border: 1px solid #ccc;
 }
 
+/* 
+   Main Container Layout System
+    */
 .allbox{
   display: flex;
   flex-direction: column;
@@ -58,6 +72,9 @@ input {
   min-height: calc(100vh - 40px);
 }
 
+/* 
+   Content Box Containers
+    */
 .boxin {
   background: white;
   border: 2px solid #ccc;
@@ -70,6 +87,9 @@ input {
   margin-top: 20px;
 }
 
+/* 
+   Side-by-Side Layout System
+    */
 .side-by-side {
   display: flex;
   justify-content: space-between;
@@ -86,6 +106,10 @@ input {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   margin-top: 20px;
 }
+
+/* 
+   Page Background Styling
+    */
 html {
   background-color: #000000;
   margin: 0;
