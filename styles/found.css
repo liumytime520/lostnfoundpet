@@ -1,8 +1,6 @@
 /* Found page specific styles */
 
-/* 
-   Found Pet Poster Generator Styles
-    */
+/* Found Pet Poster Generator Styles */
 .estimator_body {
   font-family: sans-serif;
   background-color: #f8f8f8;
@@ -22,9 +20,7 @@
   margin-top: 20px;
 }
 
-/* 
-   Form Elements (Buttons & Inputs)
-    */
+/* Form Elements (Buttons & Inputs) */
 button {
   margin-top: 15px;
   padding: 8px 16px;
@@ -48,9 +44,7 @@ input {
   border: 1px solid #ccc;
 }
 
-/* 
-   Main Container Layouts
-    */
+/* Main Container Layouts*/
 .allbox{
   display: flex;
   flex-direction: column;
@@ -79,9 +73,7 @@ input {
   margin-top: 20px;
 }
 
-/* 
-   Side-by-Side Layout System
-    */
+/* Side-by-Side Layout System*/
 .side-by-side {
   display: flex;
   justify-content: space-between;
@@ -99,9 +91,7 @@ input {
   margin-top: 20px;
 }
 
-/* 
-   Image Container & Hover Effects
-    */
+/* Image Container & Hover Effects*/
 .image-container {
   display: flex;
   justify-content: center;

@@ -1,16 +1,6 @@
-/* 
+/* COMMON STYLES*/
 
-COMMON STYLES - Lost & Found Pets Resource
-
-Shared styles used across all pages of the website
-Author: Eva Liu
-Last Updated: July 29, 2025
-
-*/
-
-/* 
-   Global Reset and Basic Layout
-    */
+/* Global Reset and Basic Layout*/
 html {
   background-color: #000000;
   margin: 0;
@@ -34,9 +24,7 @@ body.allbox {
   padding: 0;
 }
 
-/* 
-   Header Section & Navigation
-    */
+/* Header*/
 header {
   display: flex;
   justify-content: space-between;
@@ -76,9 +64,7 @@ nav a:hover {
   color: #000;
 }
 
-/* 
-   Common Container Box Styles
-    */
+/* Common Container Box Styles*/
 .box {
   display: inline-block;
   background: white;
@@ -117,16 +103,12 @@ nav a:hover {
   margin-top: 20px;
 }
 
-/* 
-   Typography Alignment
-    */
+/* Typography Alignment*/
 h2, p {
   text-align: center;
 }
 
-/* 
-   Footer Section & Attribution
-    */
+/* Footer Section & Attribution*/
 footer {
   background-color: #f9f9f9;
   padding: 30px;
@@ -148,9 +130,7 @@ footer {
   color: #888;
 }
 
-/* 
-   Text Emphasis & Styling
-    */
+/*Text Emphasis & Styling*/
 .emphasis-text {
   font-size: 2em;
   font-weight: bold;
@@ -161,9 +141,7 @@ footer {
   font-weight: bold;
 }
 
-/* 
-   Image Display & Overlay System
-    */
+/* Image Display & Overlay System*/
 .image-container {
   position: relative;
   display: inline-block;

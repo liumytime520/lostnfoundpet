@@ -1,16 +1,6 @@
-/* 
+/* HOMEPAGE STYLES*/
 
-HOMEPAGE STYLES - Lost & Found Pets Resource
-
-Custom styles for the homepage/landing page
-Author: Eva Liu
-Last Updated: July 29, 2025
-
-*/
-
-/* 
-   Homepage Navigation Button Container
-    */
+/* Homepage Navigation Button Container*/
 .boxi {
   background: transparent;
   border: transparent;
@@ -23,9 +13,7 @@ Last Updated: July 29, 2025
   margin-top: 20px;
 }
 
-/* 
-   Poster Generator Body Container
-    */
+/* Poster Generator Body Container */
 .estimator_body {
   font-family: sans-serif;
   background-color: #f8f8f8;
@@ -35,9 +23,7 @@ Last Updated: July 29, 2025
   padding: 40px;
 }
 
-/* 
-   Poster Generator Box Container
-    */
+/* Poster Generator Box Container */
 .estimator_box {
   background: white;
   border: 2px solid #ccc;
@@ -48,9 +34,7 @@ Last Updated: July 29, 2025
   margin-top: 20px;
 }
 
-/* 
-   Interactive Button Elements
-    */
+/* Interactive Button Elements */
 button {
   margin-top: 15px;
   padding: 8px 16px;
@@ -66,9 +50,7 @@ button:hover {
   background-color: #005fa3;
 }
 
-/* 
-   Form Input Elements
-    */
+/* Form Input Elements */
 input {
   padding: 6px;
   margin: 6px 0;
@@ -77,9 +59,7 @@ input {
   border: 1px solid #ccc;
 }
 
-/* 
-   Main Content Container Layout
-    */
+/* Main Content Container Layout */
 .allbox{
   display: flex;
   flex-direction: column;
@@ -96,9 +76,7 @@ input {
   min-height: calc(100vh - 40px);
 }
 
-/* 
-   Inner Content Box Container
-    */
+/* Inner Content Box Container */
 .boxin {
   background: white;
   border: 2px solid #ccc;
@@ -111,9 +89,7 @@ input {
   margin-top: 20px;
 }
 
-/* 
-   Side-by-Side Layout System
-    */
+/*Side-by-Side Layout System */
 .side-by-side {
   display: flex;
   justify-content: space-between;
@@ -131,9 +107,7 @@ input {
   margin-top: 20px;
 }
 
-/* 
-   Homepage Navigation Buttons (Lost/Found)
-    */
+/* Homepage Navigation Buttons (Lost/Found) */
 .boxt { 
   background: black; 
   border: 2px solid; 
@@ -148,9 +122,7 @@ input {
   display: inline-block; 
 }
 
-/* 
-   Typography Alignment
-    */
+/* Alignment*/
 h2, p {
     text-align: center;
 }
